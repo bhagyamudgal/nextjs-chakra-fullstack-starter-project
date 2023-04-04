@@ -1,5 +1,5 @@
 import mongoose, { ConnectOptions, Mongoose } from "mongoose";
-import { MONGODB_URI, NODE_ENV } from "@/lib/env";
+import { DB_NAME, MONGODB_URI, NODE_ENV } from "@/lib/env";
 
 // models
 
@@ -28,7 +28,7 @@ async function connectToDatabase() {
 
     if (!cached.promise) {
         const opts: ConnectOptions = {
-            dbName: "collars",
+            dbName: DB_NAME,
             bufferCommands: false,
             retryWrites: true,
             autoCreate: false,
